@@ -8,6 +8,10 @@
 	<name>junitmavenexample</name>
 	<url>http://maven.apache.org</url>
 	
+	<properties>
+		<start-class>com.deepak.examples.jenkinsjunit.Calculator</start-class>
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -16,4 +20,25 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.6.1</version> <!-- Use the latest version -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+						<configuration>
+							<mainClass>${start-class}</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<finalName>backend</finalName>
+	</build>
 </project>
