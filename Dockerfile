@@ -2,7 +2,8 @@
 FROM openjdk:latest
 
 # Copiez le fichier JAR du répertoire de build vers le répertoire de travail
-COPY     springjenkins/target/junitmavenexample-1.0-SNAPSHOT.jar ./backend.jar
+COPY target/junitmavenexample-1.0-SNAPSHOT.jar ./backend.jar
+
 
 # Définissez le répertoire de travail
 
