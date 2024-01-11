@@ -1,5 +1,5 @@
 # Utilize a base image with Java
-FROM openjdk:latest
+FROM openjdk:11
 
 # Copy the JAR file from the build directory to the working directory
 COPY target/backend.jar .
