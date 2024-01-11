@@ -17,6 +17,19 @@ spec:
         image: hanenlouati/mynginx:latest
         ports:
         - containerPort: 8080
-         imagePullSecrets:
-      - name: docker-hub 
+  imagePullSecrets:
+  - name: docker-hub  # Reference the Jenkins credential ID
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: springjenkins-service
+spec:
+  selector:
+    app: springjenkins-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: NodePort
