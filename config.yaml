@@ -17,8 +17,6 @@ spec:
         image: hanenlouati/mynginx:latest
         ports:
         - containerPort: 8080
-  imagePullSecrets:
-  - name: docker-hub  # Reference the Jenkins credential ID
 
 ---
 apiVersion: v1
