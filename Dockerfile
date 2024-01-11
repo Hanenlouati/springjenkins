@@ -2,7 +2,7 @@
 FROM openjdk:latest
 
 # Copiez le fichier JAR du répertoire de build vers le répertoire de travail
-COPY target/junitmavenexample-1.0-SNAPSHOT.jar ./backend.jar
+COPY /var/lib/jenkins/workspace/pipeline1/target/backend.jar ./backend.jar
 
 # Définissez le répertoire de travail
 
